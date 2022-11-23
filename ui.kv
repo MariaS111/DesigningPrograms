@@ -1,0 +1,986 @@
+<SignInScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+
+
+        Label:
+            text: 'Вход'
+            font_size: 50
+            size_hint: (1, .3)
+            color: .28, .28, .28
+
+
+        GridLayout:
+            cols: 2
+            spacing: 20
+            padding: 30
+
+
+            Label:
+
+                text: "Логин"
+                font_size: 40
+                color: .28, .28, .28
+
+            TextInput:
+                id: log
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+
+            Label:
+                text: "Пароль"
+                font_size: 40
+                color: .28, .28, .28
+
+            TextInput:
+                id: passwd
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+
+        AnchorLayout:
+            anchor_x : 'right'
+            anchor_y : 'top'
+            padding: 20
+
+            Button:
+                text: 'Войти'
+                font_size: 40
+                size_hint: (0.48, 0.4)
+                background_normal: ''
+                color: .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.authorization(log.text, passwd.text)
+                    root.manager.current = 'dract'
+
+
+
+<SignUpUScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+
+
+        Label:
+            text: 'Регистрация'
+            font_size: 50
+            size_hint: (1, .3)
+            color: .28, .28, .28
+
+
+
+        GridLayout:
+            cols: 2
+            spacing: 20
+            padding: 30
+
+
+            Label:
+                text: "Логин"
+                font_size: 40
+                color: .28, .28, .28
+
+
+            TextInput:
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+                id: log
+
+
+            Label:
+                text: "Телефон"
+                font_size: 40
+                color: .28, .28, .28
+
+
+            TextInput:
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+                id: tel
+
+
+            Label:
+                text: "Пароль"
+                font_size: 40
+                color: .28, .28, .28
+
+
+            TextInput:
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+                id: passwd
+
+
+        AnchorLayout:
+            anchor_x : 'right'
+            anchor_y : 'top'
+            padding: 20
+
+            Button:
+                text: 'Зарегистрироваться'
+                font_size: 40
+                size_hint: (0.5, 0.4)
+                background_normal: ''
+                color: .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.register_user(log.text, tel.text, passwd.text)
+                    root.manager.current = 'dract'
+
+
+<SignUpIScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+
+
+        Label:
+            text: 'Регистрация'
+            font_size: 50
+            size_hint: (1, .3)
+            color: .28, .28, .28
+
+
+
+        GridLayout:
+            cols: 2
+            spacing: 20
+            padding: 30
+
+
+            Label:
+                text: "Логин"
+                font_size: 40
+                color: .28, .28, .28
+
+
+            TextInput:
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+                id: log
+
+
+            Label:
+                text: "Пароль"
+                font_size: 40
+                color: .28, .28, .28
+
+
+            TextInput:
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+                id: passwd
+
+
+        AnchorLayout:
+            anchor_x : 'right'
+            anchor_y : 'top'
+            padding: 20
+
+            Button:
+                text: 'Зарегистрироваться'
+                font_size: 40
+                size_hint: (0.5, 0.4)
+                background_normal: ''
+                color: .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.register_ins(log.text, passwd.text)
+                    root.manager.current = 'insact'
+
+
+<WhoScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 30
+
+
+        Label:
+            text: 'Регистрация'
+            font_size: 50
+            size_hint: (1, .3)
+            color: .28, .28, .28
+
+        Label:
+            text: 'Кто вы?'
+            font_size: 40
+            size_hint: (1, .3)
+            color: .28, .28, .28
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'bottom'
+            padding: 10
+
+            Button:
+                text: 'Водитель'
+                font_size: 50
+                background_normal: ''
+                color: .28, .28, .28
+                size_hint: (0.5, 0.5)
+                background_color: .97, .95, .48
+                on_press: root.manager.current = 'signupu'
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+
+            Button:
+                text: 'Инспектор'
+                font_size: 50
+                background_normal: ''
+                color: .28, .28, .28
+                size_hint: (0.5, 0.5)
+                background_color: .97, .95, .48
+                on_press: root.manager.current = 'signupi'
+
+
+<RoadSystemScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        Label:
+            text: 'Транспортная система'
+            font_size: 50
+            size_hint: (1, .3)
+            color: .28, .28, .28
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'bottom'
+            padding: 10
+
+            Button:
+                text: 'Вход'
+                font_size: 50
+                background_normal: ''
+                size_hint: (0.5, 0.5)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.authorization
+                    root.manager.current = 'signin'
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+
+            Button:
+                text: 'Регистрация'
+                font_size: 50
+                background_normal: ''
+                size_hint: (0.5, 0.5)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.registration
+                    root.manager.current = 'who'
+
+
+<DriverActionScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 30
+
+        Label:
+            text: 'Выберите действие'
+            font_size: 50
+            size_hint: (1, .3)
+            color: .28, .28, .28
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+
+            Button:
+                text: 'Добавить заявку на ремонт дороги'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.7, 1)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press: root.manager.current = 'addreq'
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+
+
+            Button:
+                text: 'Внести информацию о ДТП'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.7, 1)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press: root.manager.current = 'addroadac'
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+
+            Button:
+                text: 'Просмотреть информацию о дорогах'
+                font_size: 38
+                background_normal: ''
+                size_hint: (0.7, 1)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press: root.manager.current = 'searchdr'
+
+
+<InspectorActionScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        Label:
+            text: 'Выберите действие'
+            font_size: 50
+            size_hint: (1, .3)
+            color: .28, .28, .28
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+
+            Button:
+                text: 'Просмотр заявок на ремонт дороги'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.7, 1)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.view_req
+                    root.manager.current = 'reqadd'
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+
+            Button:
+                text: 'Просмотреть информацию о дорогах'
+                font_size: 38
+                background_normal: ''
+                size_hint: (0.7, 1)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press: root.manager.current = 'searchins'
+
+<ReqAddScreen>:
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        BoxLayout:
+            orientation: 'horizontal'
+            padding: 10
+            margin: 30
+
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 10
+                margin: 30
+
+                Label:
+                    id: z
+                    text: 'Заявка'
+                    font_size: 50
+                    size_hint: (1, .3)
+                    color: .28, .28, .28
+
+                Label:
+                    id: area
+                    text: 'Дорожный участок'
+                    font_size: 50
+                    size_hint: (1, .3)
+                    color: .28, .28, .28
+
+            Button:
+                text: 'Добавить'
+                font_size: 38
+                background_normal: ''
+                size_hint: (0.7, 1)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.add_road_work(area.text,z.text)
+                    root.manager.current = 'insact'
+
+
+        Button:
+            text: 'Назад'
+            font_size: 38
+            background_normal: ''
+            size_hint: (1, 0.3)
+            color:  .28, .28, .28
+            background_color: .97, .95, .48
+            on_press:
+                root.manager.current = 'insact'
+
+
+
+<SearchScreenDr>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        Label:
+            text: "Поиск дорожного участка"
+            font_size: 40
+            color: .28, .28, .28
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+
+
+            TextInput:
+                background_color: .85, .85, .85
+                font_size: 30
+                size_hint: (0.8, 0.5)
+                cursor_color: .28, .28, .28
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+
+            Button:
+                text: 'Поиск'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.7, 0.5)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.view_roads
+                    root.manager.current = 'rinfdr'
+
+<SearchScreenIns>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        Label:
+            text: "Поиск дорожного участка"
+            font_size: 40
+            color: .28, .28, .28
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+
+
+            TextInput:
+                background_color: .85, .85, .85
+                font_size: 30
+                size_hint: (0.8, 0.5)
+                cursor_color: .28, .28, .28
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+
+            Button:
+                text: 'Поиск'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.7, 0.5)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.view_roads
+                    root.manager.current = 'rinfins'
+
+
+
+<RoadInfDrScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+            size_hint: (1, 0.3)
+
+            Label:
+                id: road
+                text: "Улица ....."
+                font_size: 40
+                size_hint: (0.3, 0.3)
+                color: .28, .28, .28
+                background_color: .85, .85, .85
+
+        GridLayout:
+            cols: 2
+            spacing: 20
+            padding: 30
+
+            GridLayout:
+                rows: 2
+                spacing: 10
+
+                Label:
+                    text: "Рейтинг x.x"
+                    font_size: 40
+                    color: .28, .28, .28
+
+                Button:
+                    text: 'Отзывы'
+                    font_size: 40
+                    background_normal: ''
+                    size_hint: (0.7, 0.5)
+                    color:  .28, .28, .28
+                    background_color: .97, .95, .48
+                    on_press:
+                        root.view_feedbacks(road.text)
+                        root.manager.current = 'com1'
+
+
+
+            Button:
+                text: 'Оставить отзыв'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.7, 0.5)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press: root.manager.current = 'comform'
+
+            Label:
+                text: "ДТП"
+                font_size: 40
+                color: .28, .28, .28
+
+            Label:
+                text: "Ремонт дороги"
+                font_size: 40
+                color: .28, .28, .28
+
+            Button:
+                text: 'Подробности'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.7, 0.5)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press: root.manager.current = 'empty1'
+
+
+            Button:
+                text: 'Подробности'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.7, 0.5)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press: root.manager.current = 'empty1'
+
+        Button:
+            text: 'Назад'
+            font_size: 40
+            background_normal: ''
+            size_hint: (1, 0.3)
+            color:  .28, .28, .28
+            background_color: .97, .95, .48
+            on_press:
+                root.manager.current = 'dract'
+
+
+
+<RoadInfInsScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        AnchorLayout:
+            anchor_x : 'center'
+            anchor_y : 'top'
+            padding: 10
+            size_hint: (1, 0.3)
+
+            Label:
+                text: "Улица ....."
+                id: road
+                font_size: 40
+                size_hint: (0.3, 0.3)
+                color: .28, .28, .28
+                background_color: .85, .85, .85
+
+        GridLayout:
+            rows: 2
+            spacing: 10
+
+            Label:
+                text: "Рейтинг x.x"
+                font_size: 40
+                color: .28, .28, .28
+
+            Button:
+                text: 'Отзывы'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.7, 0.5)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.view_feedbacks(road.text)
+                    root.manager.current = 'com2'
+
+        GridLayout:
+            cols: 2
+            spacing: 20
+            padding: 30
+
+
+            Label:
+                text: "ДТП"
+                font_size: 40
+                color: .28, .28, .28
+
+            Label:
+                text: "Ремонт дороги"
+                font_size: 40
+                id: road_work
+                color: .28, .28, .28
+
+            Button:
+                text: 'Подробности'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.7, 0.5)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press: root.manager.current = 'empty2'
+
+            GridLayout:
+                rows: 2
+                spacing: 10
+
+                Button:
+                    text: 'Подробности'
+                    font_size: 40
+                    background_normal: ''
+
+                    color:  .28, .28, .28
+                    background_color: .97, .95, .48
+                    on_press: root.manager.current = 'empty2'
+
+                Button:
+                    text: 'Удалить'
+                    font_size: 40
+                    background_normal: ''
+                    color:  .28, .28, .28
+                    background_color: .97, .95, .48
+                    on_press:
+                        root.del_road_work(road_work.text)
+                        root.manager.current = 'rinfins'
+
+        Button:
+            text: 'Назад'
+            font_size: 40
+            background_normal: ''
+            size_hint: (1, 0.3)
+            color:  .28, .28, .28
+            background_color: .97, .95, .48
+            on_press:
+                root.manager.current = 'insact'
+
+
+
+
+<EmptyScreen1>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+
+        Label:
+            text: ""
+            font_size: 40
+            id: road_work
+            color: .28, .28, .28
+
+        Button:
+            text: 'Назад'
+            font_size: 38
+            background_normal: ''
+            size_hint: (1, 0.3)
+            color:  .28, .28, .28
+            background_color: .97, .95, .48
+            on_press:
+                root.manager.current = 'rinfdr'
+
+
+<EmptyScreen2>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        Label:
+            text: ""
+            font_size: 40
+            id: road_work
+            color: .28, .28, .28
+
+        Button:
+            text: 'Назад'
+            font_size: 38
+            background_normal: ''
+            size_hint: (1, 0.3)
+            color:  .28, .28, .28
+            background_color: .97, .95, .48
+            on_press:
+                root.manager.current = 'rinfins'
+
+
+<Comment1Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        Label:
+            text: "Отзывы"
+            id: road
+            font_size: 40
+            size_hint: (1, 0.3)
+            color: .28, .28, .28
+            background_color: .85, .85, .85
+
+        Button:
+            text: 'Назад'
+            font_size: 40
+            background_normal: ''
+            size_hint: (1, 0.3)
+            color:  .28, .28, .28
+            background_color: .97, .95, .48
+            on_press:
+                root.manager.current = 'rinfdr'
+
+<Comment2Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        Label:
+            text: "Отзывы"
+            id: road
+            font_size: 40
+            size_hint: (1, 0.3)
+            color: .28, .28, .28
+            background_color: .85, .85, .85
+
+        Button:
+            text: 'Назад'
+            font_size: 40
+            background_normal: ''
+            size_hint: (1, 0.3)
+            color:  .28, .28, .28
+            background_color: .97, .95, .48
+            on_press:
+                root.manager.current = 'rinfins'
+
+
+
+<CommentFormScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        GridLayout:
+            cols: 2
+            spacing: 20
+            padding: 30
+
+            Label:
+                text: "Дорожный участок"
+                font_size: 40
+                color: .28, .28, .28
+
+            TextInput:
+                id: area
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+
+            Label:
+                text: "Описание"
+                font_size: 40
+                color: .28, .28, .28
+
+            TextInput:
+                id: desc
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+
+            Label:
+                text: "Оценка"
+                font_size: 40
+                color: .28, .28, .28
+
+            TextInput:
+                id: mark
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+
+        AnchorLayout:
+            anchor_x : 'right'
+            anchor_y : 'top'
+            padding: 20
+
+            Button:
+                text: 'Добавить'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.5, 0.5)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.add_feedback(area.text, desc.text, mark.text)
+                    root.manager.current = 'rinfdr'
+
+
+
+
+<DtpFormScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        GridLayout:
+            cols: 2
+            spacing: 20
+            padding: 30
+
+
+            Label:
+                text: "Дорожный участок"
+                font_size: 40
+                color: .28, .28, .28
+
+            TextInput:
+                id: area
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+
+        AnchorLayout:
+            anchor_x : 'right'
+            anchor_y : 'top'
+            padding: 20
+
+            Button:
+                text: 'Добавить'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.5, 0.5)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.add_ac(area.text)
+                    root.manager.current = 'dract'
+
+
+<ReqFormScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        margin: 30
+
+        GridLayout:
+            cols: 2
+            spacing: 20
+            padding: 30
+
+
+            Label:
+                text: "Дорожный участок"
+                font_size: 40
+                color: .28, .28, .28
+
+            TextInput:
+                id: area
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+
+
+            Label:
+                text: "Описание"
+                font_size: 40
+                color: .28, .28, .28
+
+            TextInput:
+                id: desc
+                background_color: .85, .85, .85
+                font_size: 30
+                cursor_color: .28, .28, .28
+
+
+        AnchorLayout:
+            anchor_x : 'right'
+            anchor_y : 'top'
+            padding: 20
+
+            Button:
+                text: 'Добавить'
+                font_size: 40
+                background_normal: ''
+                size_hint: (0.5, 0.5)
+                color:  .28, .28, .28
+                background_color: .97, .95, .48
+                on_press:
+                    root.add_req(area.text, desc.text)
+                    root.manager.current = 'dract'
+
+
+
+
+
+
+
+
+
+
+
